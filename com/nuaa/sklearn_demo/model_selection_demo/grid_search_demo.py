@@ -1,8 +1,8 @@
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
+from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import classification_report
 from sklearn.svm import SVC
-from sklearn.model_selection import GridSearchCV
 
 # Loading the Digits dataset
 digits = datasets.load_digits()
@@ -18,9 +18,12 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.5, random_state=0)
 
 # 设置gridsearch的参数
-tuned_parameters = [{'kernel': ['rbf'], 'gamma': [1e-3, 1e-4],
+tuned_parameters = [{'kernel': ['rbf'],
+                     'gamma': [1e-3, 1e-4],
                      'C': [1, 10, 100, 1000]},
-                    {'kernel': ['linear'], 'C': [1, 10, 100, 1000]}]
+
+                    {'kernel': ['linear'],
+                     'C': [1, 10, 100, 1000]}]
 
 #设置模型评估的方法.如果不清楚,可以参考上面的k-fold章节里面的超链接
 scores = ['precision', 'recall']
