@@ -5,7 +5,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn import metrics
 
 iris_data = datasets.load_iris()
-
+#现将数据标准化
 new_data = StandardScaler().fit_transform(iris_data.data)
 
 print(len(iris_data.data))

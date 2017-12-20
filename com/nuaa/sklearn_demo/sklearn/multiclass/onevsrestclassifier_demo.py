@@ -24,4 +24,4 @@ classif.fit(traing_data, traing_target)
 predicted = classif.predict(test_data)
 
 print(metrics.classification_report(test_target, predicted,
-                                    target_names="test"))
+                                    target_names="tes"))
