@@ -39,3 +39,10 @@ print(pca.explained_variance_ratio_)
 print(pca.explained_variance_)
 print(pca.n_components_)
 
+
+lda = LinearDiscriminantAnalysis(n_components=2)
+lda.fit(X,y)
+X_new = lda.transform(X)
+plt.scatter(X_new[:, 0], X_new[:, 1],marker='o',c=y)
+plt.show()
+
