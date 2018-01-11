@@ -13,10 +13,3 @@ print(dict)
 tf_transformer = TfidfTransformer().fit(corpusTotoken)
 X_train_tf = tf_transformer.transform(corpusTotoken).todense()
 print((X_train_tf * X_train_tf.T).A)
-
-from sklearn.decomposition import PCA
-import numpy as np
-pca = PCA(n_components=10)
-print(corpusTotoken)
-pca.fit(np.array(corpusTotoken))
-print(pca.explained_variance_ratio_)

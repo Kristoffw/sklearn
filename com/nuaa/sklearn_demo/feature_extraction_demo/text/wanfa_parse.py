@@ -33,7 +33,6 @@ X_train_tf = tf_transformer.transform(corpusTotoken).todense()
 all_similarity = (X_train_tf * X_train_tf.T).A
 
 similarity = []
-
 for index in range(all_similarity.shape[0]):
     single_simulator_top_20 = np.argsort(all_similarity[index, :])[-20:]
     index_similarity = [ids[index] for index in single_simulator_top_20]
